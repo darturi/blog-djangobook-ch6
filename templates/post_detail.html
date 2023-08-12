@@ -5,4 +5,25 @@
     <h2>{{ post.title }}</h2>
     <p>{{ post.body }}</p>
 </div>
+
+<div>
+    <!--
+        Anatomy of the below line of html:
+            ~ The url
+            ~ the words 'post_edit'
+            ~ the id number for the given post
+        This will provide the user with a link so that they can 
+        edit their blog post after posting it
+    -->
+    <a href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a>
+
+    <!--
+        Same as above link except this one serves the purpose of providing
+        users with a way to delete posts.
+    -->
+    <a href="{% url 'post_delete' post.pk %}">+ Delete Blog Post</a>
+
+</div>
+
+
 {% endblock content %}
